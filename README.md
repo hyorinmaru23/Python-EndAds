@@ -1,4 +1,4 @@
-# Python-EndAds
+# EndAds
 
 ## Description
 EndAds is an alternative to AdBlock.
