@@ -1,5 +1,4 @@
 
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #title           :PythonAdBlocker.py
 #description     :This program is an alternative to adblocker or any software used to block ads.
