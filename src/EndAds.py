@@ -4,7 +4,6 @@
 #title           :PythonAdBlocker.py
 #description     :This program is an alternative to adblocker or any software used to block ads.
 #author          :Sonny Hu
-#nickname        :ZeroDay
 #date            :2017/24/10
 #version         /:1.2/
 #notes           :Need admin privileges
