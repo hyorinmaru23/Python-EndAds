@@ -36,14 +36,9 @@ def progBar(curr, total, full_progbar):
         print('\tComplete\r\tDoing=>', '#'*filled_progbar + '-'*(full_progbar-filled_progbar), '[{:>7.2%}]'.format(frac), end='')
 
 def startProgBar():
-        for i in range(40000+1):
-                progBar(i, 40000, 25)
+        for i in range(4000+1):
+                progBar(i, 4000, 25)
         print()
-
-#def writeIn(text, file):
-#        file = open(file, "a+")
-#        file.write(text)
-        
 
 def writeIn(text, file):
 	with io.open(file, "a+", encoding="utf-8") as f:
@@ -58,10 +53,9 @@ def checkStatus():
                         print("\t->HTTP 200")
                         return True
                 else:
-                        print("Unable to get data from http://someonewhocares.org/hosts")
+                        print("Unable to get data from http://someonewhocares.org/hosts\n\t HTTP %s" %(status))
         except requests.ConnectionError as e:
-                #print("Unable to get hosts from http://someonewhocares.org/hosts, more info: %s" %e)
-                print("Unable to get data from http://someonewhocares.org/hosts")
+                print("Unable to get data from http://someonewhocares.org/hosts\n\t HTTP %s" %(status))
                 return False
                
 def makeHosts():
@@ -124,9 +118,9 @@ def checkIfInstalled() :
 
 def main_menu():
         os.system('cls')
-        printWithBorder("======Python EndAds======", 100)
+        printWithBorder("====== EndAds ======", 100)
         #print(30 * "-" , "Python EndAds" , 30 * "-")
-        print("1. Install -/- Update PythonEndAds ")
+        print("1. Install -/- Update EndAds ")
         print("2. Perform backup (will overwrite if you already have a backup)")
         print("3. Just build hosts file")
         print("4. Help")
@@ -137,7 +131,7 @@ def main_menu():
 isUserAdmin()
 winHostsLocation = "C:\Windows\System32\drivers\etc\hosts"
 loop = True
-about = "Python EndAds is an alternative to adblock and any other softwares, add-ons or plugins used to block ads. No need to install any software or programs, this will use windows hosts file to block any known ads by preventing your computer from connecting to selected internet hosts. Again a great thanks to Dan Pollock and all people who keep submitting sites."
+about = "EndAds is an alternative to adblock and any other softwares, add-ons or plugins used to block ads. No need to install any software or programs, this will use windows hosts file to block any known ads by preventing your computer from connecting to selected internet hosts. Again a great thanks to Dan Pollock and all people who keep submitting sites."
 while loop:
         main_menu()
         choice = input("Enter what you want to do [1-5]:")
@@ -145,7 +139,7 @@ while loop:
                 if checkHostsWin():
                         if checkIfInstalled():
                                 if (checkStatus()):
-                                        print("Python EndAds is already installed, update is going to be performed")
+                                        print("EndAds is already installed, update is going to be performed")
                                         time.sleep(1)
                                         with open(winHostsLocation, 'r') as myfile:
                                                 #Get all contents before EnAds
